@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Politique de confidentialité de WineWhisper</title>
+<style>
+    :root {
+        --text: #2b1a1f;
+        --muted: #6b5a5f;
+        --accent: #7b2d3f;
+        --background: #fbf8f6;
+        --line: #e6dcd8;
+        --cell: #f3ece9;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --text: #f2e9eb;
+            --muted: #b8a7ac;
+            --accent: #d98a9c;
+            --background: #1c1316;
+            --line: #3d2a30;
+            --cell: #2a1d21;
+        }
+    }
+    body {
+        margin: 0;
+        background: var(--background);
+        color: var(--text);
+        font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+    }
+    h1 {
+        font-size: 1.9em;
+        line-height: 1.2;
+        margin: 0 0 8px;
+    }
+    h2 {
+        font-size: 1.25em;
+        margin: 40px 0 8px;
+        color: var(--accent);
+    }
+    .updated {
+        color: var(--muted);
+        font-style: italic;
+        margin-top: 0;
+    }
+    a {
+        color: var(--accent);
+    }
+    .table-wrapper {
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+    }
+    th, td {
+        text-align: left;
+        vertical-align: top;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+    }
+    th {
+        background: var(--cell);
+    }
+    h3 {
+        font-size: 1.05em;
+        margin: 28px 0 8px;
+    }
+</style>
+</head>
+<body>
+<main>
+    <h1>Politique de confidentialité de WineWhisper</h1>
+    <p class="updated">Dernière mise à jour : 12/10/2026</p>
+
+    <p>WineWhisper est une application de gestion de cave à vin, éditée par Thibaud Scarpa (« nous »). Cette page explique quelles données l'application traite, où elles vont, et comment vous gardez la main sur elles.</p>
+
+    <h2>En résumé</h2>
+    <ul>
+        <li>Votre cave reste sur votre appareil. Nous n'avons ni serveur de comptes ni base de données qui la recevrait.</li>
+        <li>Trois fonctions font appel à un service d'intelligence artificielle, OpenAI, par l'intermédiaire d'un serveur relais qui ne conserve rien : le scan d'étiquette, la saisie manuelle d'un vin et le Sommelier. Elles ne s'activent qu'après votre accord, révocable à tout moment.</li>
+        <li>Pas de compte, pas de publicité, pas de mesure d'audience, pas de pistage.</li>
+    </ul>
+
+    <h2>Données conservées sur votre appareil</h2>
+    <p>Les vins de votre cave, leurs étiquettes photographiées, l'historique des entrées et sorties, le rangement et la configuration de vos caves sont enregistrés dans l'application, sur votre appareil uniquement. Ils ne nous sont jamais transmis.</p>
+    <p>Ils sont compris dans les sauvegardes de votre appareil (iCloud ou ordinateur), selon vos propres réglages iOS. Vous pouvez aussi exporter une archive depuis l'écran Données : c'est vous qui choisissez où l'enregistrer ou à qui l'envoyer.</p>
+
+    <h2>Appareil photo</h2>
+    <p>L'appareil photo sert uniquement à photographier l'étiquette d'une bouteille. iOS vous demande votre autorisation la première fois. Les photos restent sur l'appareil, sauf lors d'une analyse par l'IA (voir ci-dessous).</p>
+
+    <h2>Analyse par l'intelligence artificielle (OpenAI)</h2>
+    <p>Trois fonctions envoient des données à OpenAI, L.L.C., qui les traite pour notre compte :</p>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fonction</th>
+                    <th>Données envoyées</th>
+                    <th>Pourquoi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Scan d'étiquette</td>
+                    <td>Photos de l'étiquette et de la contre-étiquette, puis l'identité du vin retenue (domaine, cuvée, millésime, appellation…)</td>
+                    <td>Identifier le vin et rédiger sa fiche</td>
+                </tr>
+                <tr>
+                    <td>Saisie manuelle d'un vin</td>
+                    <td>Les informations saisies : domaine, cuvée, millésime, appellation, région, couleur et pays</td>
+                    <td>Rédiger la fiche du vin</td>
+                </tr>
+                <tr>
+                    <td>Sommelier</td>
+                    <td>L'occasion, le niveau, la couleur et le plat choisis, et la liste des vins de votre cave : domaine, cuvée, millésime, appellation, couleur, pays, réputation de l'appellation et période de dégustation</td>
+                    <td>Choisir la bouteille qui convient le mieux et expliquer ce choix</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Aucune autre donnée n'est envoyée à OpenAI : ni votre nom, ni votre adresse e-mail, ni votre position, ni identifiant de votre appareil. Les quantités, prix, notes et emplacements de vos bouteilles ne sont pas transmis.</p>
+    <p>Ces envois n'ont lieu qu'après votre accord explicite, demandé à la première utilisation. Vous pouvez le retirer à tout moment dans l'écran Données, rubrique Confidentialité : le scan, la saisie manuelle et le Sommelier redemandent alors l'autorisation avant tout nouvel envoi.</p>
+    <p>Selon les engagements d'OpenAI pour son API, les données reçues ne servent pas à entraîner ses modèles. OpenAI peut les conserver jusqu'à 30 jours afin de détecter les abus, puis les supprime. Voir la politique d'OpenAI : <a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a> et ses engagements pour l'API : <a href="https://openai.com/enterprise-privacy">https://openai.com/enterprise-privacy</a>.</p>
+    <p>Les données sont traitées par OpenAI aux États-Unis. Ce transfert hors de l'Union européenne est encadré par les garanties prévues par OpenAI (clauses contractuelles types de la Commission européenne).</p>
+
+    <h3>Serveur relais (Cloudflare)</h3>
+    <p>Les envois vers OpenAI ne partent pas directement de votre appareil : ils passent par un serveur relais que nous exploitons chez Cloudflare, Inc. Ce relais vérifie que la demande vient bien de WineWhisper, y ajoute notre accès à OpenAI et vous renvoie la réponse. Il ne conserve ni le contenu des demandes ni celui des réponses, et ne tient pas de journal.</p>
+    <p>Pour éviter les abus, il reçoit aussi deux informations techniques, qu'il ne transmet pas à OpenAI : l'adresse IP de votre connexion, comme tout serveur sur Internet, et un identifiant tiré au hasard par l'application lors de sa première utilisation, qui ne révèle rien de vous ni de votre appareil et disparaît si vous supprimez l'application. Elles servent uniquement à limiter le nombre de demandes par minute.</p>
+    <p>Cloudflare traite ces données pour notre compte, en général dans le centre de données le plus proche de vous. Cloudflare est certifié au Data Privacy Framework UE–États-Unis, qui encadre les transferts éventuels hors de l'Union européenne ; à défaut, il s'appuie sur les clauses contractuelles types de la Commission européenne. Voir la politique de Cloudflare : <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a>.</p>
+
+    <h2>Vos droits</h2>
+    <p>Comme nous ne recevons ni ne conservons vos données, la plupart des droits prévus par le RGPD (accès, rectification, effacement) s'exercent directement dans l'application :</p>
+    <ul>
+        <li><strong>Effacer</strong> : écran Données, « Tout effacer », ou suppression de l'application ;</li>
+        <li><strong>Récupérer</strong> : écran Données, export d'une archive ;</li>
+        <li><strong>Vous opposer à l'envoi vers OpenAI</strong> : écran Données, rubrique Confidentialité.</li>
+    </ul>
+    <p>Pour les données reçues par OpenAI pendant leur durée de conservation, vous pouvez aussi vous adresser à OpenAI (<a href="mailto:privacy@openai.com">privacy@openai.com</a>). Vous pouvez enfin introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr">https://www.cnil.fr</a>).</p>
+
+    <h2>Public</h2>
+    <p>WineWhisper traite de vin et s'adresse aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+
+    <h2>Modifications</h2>
+    <p>Si cette politique change, la nouvelle version sera publiée sur cette page, avec sa date de mise à jour. Tout nouvel envoi de données à un tiers sera soumis à votre accord.</p>
+
+    <h2>Contact</h2>
+    <p>Thibaud Scarpa — <a href="mailto:winewhisper@gmail.com">winewhisper@gmail.com</a></p>
+</main>
+</body>
+</html>
