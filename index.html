@@ -186,28 +186,6 @@
     .points strong { display: block; }
     .points span { color: var(--muted); }
 
-    /* Illustration de la cave : un emplacement s'allume. */
-    .rack {
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        gap: 7px;
-        max-width: 300px;
-        margin: 36px 0 0;
-        padding: 16px;
-        border-radius: 16px;
-        background: var(--surface);
-        border: 1px solid var(--line);
-    }
-    .rack i {
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: radial-gradient(circle at 35% 30%, #8a3646, #3d0d16);
-    }
-    .rack i.white { background: radial-gradient(circle at 35% 30%, #e8d9a0, #9c8a4a); }
-    .rack i.empty { background: transparent; border: 1px dashed var(--line); }
-    .rack i.lit { box-shadow: 0 0 0 3px var(--background), 0 0 0 5px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
-    @keyframes pulse { 50% { box-shadow: 0 0 0 3px var(--background), 0 0 0 5px var(--accent), 0 0 22px 6px var(--accent); } }
-
     /* Sommelier : les occasions */
     .sommelier-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
     .occasions { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 72px; }
@@ -272,6 +250,51 @@
     .phones.guide figcaption { margin-top: 14px; font-size: 0.9em; color: var(--muted); font-weight: 600; }
     .path { font-size: 0.9em; color: var(--text); font-weight: 600; }
 
+    /* Grand Cru : pastille sur les fonctions réservées, comparatif et prix. */
+    .tag {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 2px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        font: 600 0.68em/1.5 var(--sans);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        vertical-align: 0.15em;
+    }
+    /* Deux offres, puis la capture de l'écran Grand Cru ; elle passe dessous quand la place manque. */
+    .offers { display: grid; grid-template-columns: 1fr 1fr 280px; gap: 24px; margin-top: 48px; }
+    .offers .phone { width: 100%; align-self: center; }
+    @media (max-width: 900px) {
+        .offers { grid-template-columns: 1fr 1fr; }
+        .offers .phone { grid-column: 1 / -1; width: min(280px, 100%); margin-top: 24px; }
+    }
+    .offer {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 32px 30px;
+    }
+    .offer.premium { border: 2px solid var(--accent); box-shadow: var(--shadow); }
+    .offer h3 { font-size: 1.5em; }
+    .offer .price { color: var(--muted); margin: 0 0 22px; }
+    .offer .points { margin-top: 0; gap: 14px; }
+    .laurel { display: flex; align-items: center; gap: 8px; color: var(--accent); }
+    .laurel small { font: 600 0.62em/1 var(--sans); letter-spacing: 0.18em; display: block; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .plan {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px 16px;
+        text-align: center;
+    }
+    .plan strong { display: block; font: 600 1.6em/1.2 var(--serif); margin: 4px 0; }
+    .plan span { color: var(--muted); font-size: 0.88em; }
+    .plan.best { border-color: var(--accent); }
+    .fine { color: var(--muted); font-size: 0.85em; text-align: center; max-width: 720px; margin: 28px auto 0; }
+
     /* FAQ */
     .faq { max-width: 760px; margin: 40px auto 0; }
     details { border-bottom: 1px solid var(--line); padding: 18px 0; }
@@ -292,7 +315,6 @@
     @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .js .reveal { opacity: 1; transform: none; transition: none; }
-        .rack i.lit { animation: none; }
     }
 
     @media (max-width: 900px) {
@@ -304,7 +326,7 @@
         .hero { padding: 48px 0 72px; }
         .hero .wrap, .feature { grid-template-columns: 1fr; gap: 48px; }
         .feature.reverse > :first-child { order: 0; }
-        .cards { grid-template-columns: 1fr; }
+        .cards, .offers, .plans { grid-template-columns: 1fr; }
         .phones { gap: 14px; }
         .phones .phone { border-radius: 30px; padding: 7px; }
         .phones .phone .screen { border-radius: 24px; }
@@ -325,6 +347,7 @@
             <li><a href="#cave">Cave 3D</a></li>
             <li><a href="#sommelier">Sommelier</a></li>
             <li><a href="#scan">Scan</a></li>
+            <li><a href="#grand-cru">Grand Cru</a></li>
             <li><a href="#prise-en-main">Prise en main</a></li>
             <li><a href="#faq">Questions</a></li>
         </ul>
@@ -346,7 +369,7 @@
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.6-1-2.6-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg>
                         Bientôt sur l'App Store
                     </span>
-                    <small>iPhone · iOS 27 · Sans compte, sans publicité</small>
+                    <small>iPhone · iOS 27 · Gratuit, sans compte, sans publicité · <a href="#grand-cru">Grand Cru</a> en option</small>
                 </div>
             </div>
             <div class="reveal">
@@ -370,13 +393,8 @@
                 <ul class="points">
                     <li><strong>Retrouvez une bouteille en un geste.</strong><span>Depuis la fiche d'un vin, touchez « Voir dans la cave » : son emplacement s'allume.</span></li>
                     <li><strong>Rangez sans réfléchir.</strong><span>Les nouvelles bouteilles attendent dans un sas. WineWhisper propose la meilleure place, à côté du même millésime, du même vin ou du même domaine, et vous la posez d'un toucher.</span></li>
-                    <li><strong>Plusieurs caves.</strong><span>Une cave de service, une cave de garde, un casier chez des amis : chacune a sa forme et son contenu.</span></li>
+                    <li><strong>Plusieurs caves.<span class="tag">Grand Cru</span></strong><span>Une cave de service, une cave de garde, un casier chez des amis : chacune a sa forme et son contenu. La version gratuite range jusqu'à 24 bouteilles dans une cave.</span></li>
                 </ul>
-                <div class="rack" aria-hidden="true">
-                    <i></i><i></i><i class="white"></i><i></i><i></i><i class="white"></i><i></i><i></i><i></i>
-                    <i class="white"></i><i></i><i></i><i></i><i class="lit"></i><i></i><i class="white"></i><i></i><i class="empty"></i>
-                    <i></i><i class="white"></i><i></i><i class="empty"></i><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i>
-                </div>
             </div>
             <div class="phones reveal">
                 <div class="phone">
@@ -495,7 +513,7 @@
                 <h2>Votre cave en un coup d'œil</h2>
                 <ul class="points">
                     <li><strong>Analyse</strong><span>La répartition par couleur, par région et par phase de garde.</span></li>
-                    <li><strong>Finances</strong><span>La valeur de la cave au prix d'achat, et celle des bouteilles à ouvrir avant qu'elles perdent leur intérêt. La fiabilité du chiffre est indiquée.</span></li>
+                    <li><strong>Finances<span class="tag">Grand Cru</span></strong><span>Le montant investi et vos achats mois par mois, d'après vos prix d'achat, et la valeur des bouteilles à ouvrir avant qu'elles perdent leur intérêt. La fiabilité du chiffre est indiquée.</span></li>
                     <li><strong>Activité</strong><span>Les entrées et les sorties, mois après mois, et l'historique de chaque bouteille.</span></li>
                 </ul>
             </div>
@@ -617,8 +635,54 @@
         </div>
     </section>
 
+    <!-- Grand Cru -->
+    <section id="grand-cru" class="alt">
+        <div class="wrap">
+            <div class="center reveal">
+                <p class="eyebrow">WineWhisper Grand Cru</p>
+                <h2>Le sommelier et la cave 3D, sans limite</h2>
+                <p class="lead">WineWhisper est gratuit, et votre liste de vins n'a pas de limite. Grand Cru lève les plafonds de l'IA et de la cave 3D.</p>
+            </div>
+            <div class="offers reveal">
+                <div class="offer">
+                    <h3>Gratuit</h3>
+                    <p class="price">Pour découvrir, et pour toujours</p>
+                    <ul class="points">
+                        <li><strong>Une liste de vins illimitée</strong><span>Fiches, saisie manuelle complète (cépages, garde, prix, notes), historique et statistiques.</span></li>
+                        <li><strong>10 scans d'étiquette offerts</strong><span>L'IA identifie le vin et remplit sa fiche. Un scan raté n'est pas décompté.</span></li>
+                        <li><strong>Le Sommelier : 5 recherches offertes</strong><span>Puis 2 recherches par mois.</span></li>
+                        <li><strong>Une cave 3D</strong><span>Jusqu'à 24 bouteilles rangées, la taille d'une petite cave électrique.</span></li>
+                        <li><strong>Sauvegarde et restauration</strong><span>Toujours gratuites.</span></li>
+                    </ul>
+                </div>
+                <div class="offer premium">
+                    <h3 class="laurel"><span><small>WINEWHISPER</small>Grand Cru</span></h3>
+                    <p class="price">Tout le gratuit, et en plus :</p>
+                    <ul class="points">
+                        <li><strong>Scans illimités</strong><span>L'IA identifie chaque vin et remplit sa fiche : garde, cépages, accords.</span></li>
+                        <li><strong>Sommelier illimité</strong><span>La bonne bouteille pour chaque occasion, avec ou sans plat.</span></li>
+                        <li><strong>Toutes vos caves en 3D</strong><span>Rangez toutes vos bouteilles, dans autant de caves que vous le souhaitez.</span></li>
+                        <li><strong>Finances de la cave</strong><span>Le montant investi et vos achats mois par mois, d'après vos prix d'achat.</span></li>
+                    </ul>
+                </div>
+                <div class="phone">
+                    <div class="screen">
+                        <div class="placeholder">L'offre Grand Cru dans l'app</div>
+                        <img src="images/c14-grand-cru.jpg" alt="L'écran Grand Cru : les quatre avantages et les formules annuelle, mensuelle et à vie" onerror="this.remove()" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="plans reveal">
+                <div class="plan"><span>Mensuel</span><strong>3,99 €</strong><span>par mois, sans engagement</span></div>
+                <div class="plan best"><span>Annuel · −27 %</span><strong>34,99 €</strong><span>par an, soit 2,92 € par mois</span></div>
+                <div class="plan"><span>À vie</span><strong>79,99 €</strong><span>une seule fois, sans abonnement</span></div>
+            </div>
+            <p class="fine">Prix en France, TVA comprise. Abonnements renouvelés automatiquement, résiliables à tout moment dans les réglages de l'App Store, au plus tard 24 heures avant l'échéance. Vos vins restent sur votre iPhone, avec ou sans Grand Cru.</p>
+        </div>
+    </section>
+
     <!-- FAQ -->
-    <section id="faq" class="alt">
+    <section id="faq">
         <div class="wrap">
             <div class="center reveal">
                 <p class="eyebrow">Questions fréquentes</p>
@@ -628,6 +692,18 @@
                 <details>
                     <summary>Faut-il un compte ?</summary>
                     <p>Non. WineWhisper fonctionne sans compte et sans inscription.</p>
+                </details>
+                <details>
+                    <summary>WineWhisper est-il gratuit ?</summary>
+                    <p>Oui. La liste de vins, les fiches, la saisie manuelle, la garde, les statistiques et la sauvegarde sont gratuites et sans limite. Le scan, le Sommelier et la cave 3D ont une part offerte ; Grand Cru les rend illimités.</p>
+                </details>
+                <details>
+                    <summary>Que se passe-t-il si j'arrête Grand Cru ?</summary>
+                    <p>Rien n'est supprimé ni caché. Les fiches déjà remplies le restent, et vos caves restent visibles en 3D : vous pouvez toujours y retrouver une bouteille et la sortir. Seul le rangement de nouvelles bouteilles revient à la limite gratuite.</p>
+                </details>
+                <details>
+                    <summary>J'ai déjà payé sur un autre iPhone.</summary>
+                    <p>Dans l'écran Grand Cru, touchez « Restaurer les achats » avec le même compte App Store.</p>
                 </details>
                 <details>
                     <summary>L'application fonctionne-t-elle sans connexion ?</summary>
