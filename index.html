@@ -186,6 +186,15 @@
     .points strong { display: block; }
     .points span { color: var(--muted); }
 
+    /* Cave 3D : les deux types de meuble, côte à côte. */
+    .kinds { margin-top: 96px; }
+    .kinds .phones { margin-top: 40px; gap: 40px; }
+    .kinds figure { margin: 0; flex: 0 1 280px; min-width: 0; }
+    .kinds .phone { width: 100%; margin: 0; }
+    .kinds figcaption { margin-top: 18px; text-align: center; }
+    .kinds figcaption strong { display: block; font-family: var(--serif); font-size: 1.15em; }
+    .kinds figcaption span { color: var(--muted); font-size: 0.92em; }
+
     /* Sommelier : les occasions */
     .sommelier-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
     .occasions { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 72px; }
@@ -396,19 +405,39 @@
                     <li><strong>Plusieurs caves.<span class="tag">Grand Cru</span></strong><span>Une cave de service, une cave de garde, un casier chez des amis : chacune a sa forme et son contenu. La version gratuite range jusqu'à 24 bouteilles dans une cave.</span></li>
                 </ul>
             </div>
-            <div class="phones reveal">
-                <div class="phone">
-                    <div class="screen">
-                        <div class="placeholder">Ma cave : vue d'ensemble en 3D</div>
-                        <img src="images/c2-cave-3d.jpg" alt="La cave en 3D, chaque bouteille avec son étiquette" onerror="this.remove()" loading="lazy">
-                    </div>
-                </div>
+            <div class="reveal">
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Une bouteille retrouvée, son emplacement allumé</div>
                         <img src="images/c3-bouteille-retrouvee.jpg" alt="Un vin retrouvé : son emplacement s'allume dans la cave" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="wrap kinds">
+            <div class="center reveal">
+                <h2>Cave électrique ou rack</h2>
+                <p class="lead">Choisissez le type de votre meuble : WineWhisper le dessine tel qu'il est chez vous.</p>
+            </div>
+            <div class="phones reveal">
+                <figure>
+                    <div class="phone">
+                        <div class="screen">
+                            <div class="placeholder">Une cave électrique en 3D</div>
+                            <img src="images/c2-cave-3d.jpg" alt="Une cave électrique en 3D, porte ouverte, ses clayettes pleines de bouteilles" onerror="this.remove()" loading="lazy">
+                        </div>
+                    </div>
+                    <figcaption><strong>Cave électrique</strong><span>Des clayettes, les bouteilles tête-bêche sur deux profondeurs. Une étagère peut n'avoir que le devant, comme celle du bas, au-dessus du moteur.</span></figcaption>
+                </figure>
+                <figure>
+                    <div class="phone">
+                        <div class="screen">
+                            <div class="placeholder">Un rack à bouteilles en 3D</div>
+                            <img src="images/c2c-rack.jpg" alt="Un rack à bouteilles en bois en 3D, ses bouteilles couchées côte à côte" onerror="this.remove()" loading="lazy">
+                        </div>
+                    </div>
+                    <figcaption><strong>Rack</strong><span>Une étagère ou un rack ouvert : une rangée de bouteilles par étage, jusqu'à 20 de large, goulot devant ou au fond.</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -579,7 +608,7 @@
                 <li>
                     <div>
                         <h3>Créez votre cave</h3>
-                        <p><span class="path">Ma cave › Configurer la cave</span> (l'icône de réglages en haut à gauche). Donnez-lui un nom, le nombre d'étagères et de bouteilles par couche. L'aperçu 3D se met à jour pendant que vous réglez.</p>
+                        <p><span class="path">Ma cave › Configurer la cave</span> (l'icône de réglages en haut à gauche). Donnez-lui un nom, choisissez son type (cave électrique ou rack), le nombre d'étagères et de bouteilles par couche. L'aperçu 3D se met à jour pendant que vous réglez.</p>
                     </div>
                 </li>
                 <li>
@@ -716,7 +745,7 @@
                 </details>
                 <details>
                     <summary>Ma cave ne ressemble pas à un meuble standard.</summary>
-                    <p>Chaque cave se règle : de 1 à 12 étagères, de 4 à 20 bouteilles par couche, et jusqu'à 3 couches, étagère par étagère.</p>
+                    <p>Chaque cave se règle : cave électrique ou rack, de 1 à 12 étagères, de 4 à 20 bouteilles par couche. Dans une cave électrique, chaque étagère peut avoir jusqu'à 3 couches, ou ne recevoir de bouteilles que sur le devant.</p>
                 </details>
                 <details>
                     <summary>Comment changer de téléphone ?</summary>
