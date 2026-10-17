@@ -4,12 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>WineWhisper – Cave à vin · Chaque bouteille à son apogée</title>
-<meta name="description" content="WineWhisper : votre cave à vin en 3D sur iPhone, un sommelier qui choisit dans vos bouteilles, et une photo d'étiquette pour ajouter un vin. Sans compte, sans publicité.">
-<meta property="og:title" content="WineWhisper – Cave à vin">
-<meta property="og:description" content="Votre cave en 3D, un sommelier qui la connaît par cœur, et une simple photo pour y ajouter un vin.">
-<meta property="og:image" content="https://thibaud-scarpa.github.io/WineWhisper/images/icon.jpg">
+<title>WineWhisper – Application de gestion de cave à vin sur iPhone</title>
+<meta name="description" content="Gérez votre cave à vin sur iPhone : cave électrique ou étagère en 3D, scan d'étiquette qui remplit la fiche, garde et apogée de chaque bouteille, sommelier IA pour les accords mets et vins. Gratuit, sans compte.">
+<!-- Adresse à changer partout (canonical, og:url, og:image, JSON-LD, sitemap.xml, robots.txt) si le site passe sur un nom de domaine. -->
+<link rel="canonical" href="https://thibaud-scarpa.github.io/WineWhisper/">
+<meta property="og:site_name" content="WineWhisper">
+<meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://thibaud-scarpa.github.io/WineWhisper/">
+<meta property="og:title" content="WineWhisper – Application de cave à vin sur iPhone">
+<meta property="og:description" content="Votre cave en 3D, un sommelier qui la connaît par cœur, et une simple photo pour y ajouter un vin.">
+<meta property="og:image" content="https://thibaud-scarpa.github.io/WineWhisper/images/partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WineWhisper, application de cave à vin : l'accueil et la cave en 3D sur iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "WineWhisper",
+    "alternateName": "WineWhisper – Cave à vin",
+    "description": "Application de gestion de cave à vin sur iPhone : cave en 3D, scan d'étiquette, garde des vins et sommelier IA pour les accords mets et vins.",
+    "url": "https://thibaud-scarpa.github.io/WineWhisper/",
+    "image": "https://thibaud-scarpa.github.io/WineWhisper/images/partage.jpg",
+    "operatingSystem": "iOS 27",
+    "applicationCategory": "LifestyleApplication",
+    "inLanguage": "fr",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Gratuit, avec l'offre Grand Cru en achat intégré"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Thibaud Scarpa"
+    }
+}
+</script>
 <link rel="icon" href="images/icon.jpg">
 <link rel="apple-touch-icon" href="images/icon.jpg">
 <style>
@@ -52,7 +85,7 @@
         -webkit-font-smoothing: antialiased;
     }
     a { color: var(--accent); }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; height: auto; display: block; }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
     /* Barre de navigation */
@@ -85,6 +118,8 @@
         color: var(--accent);
         margin: 0 0 14px;
     }
+    /* Dans le h1, la ligne de mots-clés garde l'allure d'un surtitre. */
+    h1 .eyebrow { display: block; font-size: 0.83rem; line-height: 1.4; }
     .lead { font-size: 1.2em; color: var(--muted); margin: 0 0 28px; }
 
     /* En-tête */
@@ -351,7 +386,7 @@
 
 <header class="nav">
     <div class="wrap">
-        <a class="brand" href="#"><img src="images/icon.jpg" alt="">WineWhisper</a>
+        <a class="brand" href="#"><img src="images/icon.jpg" alt="" width="512" height="512">WineWhisper</a>
         <ul>
             <li><a href="#cave">Cave 3D</a></li>
             <li><a href="#sommelier">Sommelier</a></li>
@@ -368,9 +403,8 @@
     <div class="hero">
         <div class="wrap">
             <div class="reveal">
-                <img class="hero-icon" src="images/icon.jpg" alt="Icône de WineWhisper">
-                <p class="eyebrow">WineWhisper</p>
-                <h1>Chaque bouteille à son apogée</h1>
+                <img class="hero-icon" src="images/icon.jpg" width="512" height="512" alt="Icône de WineWhisper">
+                <h1><span class="eyebrow">Application de cave à vin pour iPhone</span>Chaque bouteille à son apogée</h1>
                 <p class="lead">Votre cave, en 3D, dans votre poche. Un sommelier qui la connaît par cœur. Et une simple photo pour y ajouter un vin.</p>
                 <div class="cta">
                     <!-- À remplacer par le lien public TestFlight, puis par le badge officiel App Store à la sortie. -->
@@ -385,7 +419,7 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Accueil : la bouteille du jour et « Que boire ce soir ? »</div>
-                        <img src="images/c1-accueil.jpg" alt="L'accueil de WineWhisper : la bouteille du jour et la carte « Que boire ce soir ? »" onerror="this.remove()">
+                        <img src="images/c1-accueil.jpg" width="506" height="1100" fetchpriority="high" alt="L'accueil de WineWhisper : la bouteille du jour et la carte « Que boire ce soir ? »" onerror="this.remove()">
                     </div>
                 </div>
             </div>
@@ -397,7 +431,7 @@
         <div class="wrap feature">
             <div class="reveal">
                 <p class="eyebrow">Cave 3D</p>
-                <h2>Votre cave, comme si vous y étiez</h2>
+                <h2>Votre cave à vin en 3D, comme si vous y étiez</h2>
                 <p>Décrivez vos étagères une fois : leur nombre, les bouteilles par couche, les couches superposées. WineWhisper reconstruit votre cave en 3D, et chaque bouteille y porte sa propre étiquette.</p>
                 <ul class="points">
                     <li><strong>Retrouvez une bouteille en un geste.</strong><span>Depuis la fiche d'un vin, touchez « Voir dans la cave » : son emplacement s'allume.</span></li>
@@ -409,7 +443,7 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Une bouteille retrouvée, son emplacement allumé</div>
-                        <img src="images/c3-bouteille-retrouvee.jpg" alt="Un vin retrouvé : son emplacement s'allume dans la cave" onerror="this.remove()" loading="lazy">
+                        <img src="images/c3-bouteille-retrouvee.jpg" width="506" height="1100" alt="Un vin retrouvé : son emplacement s'allume dans la cave" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -424,7 +458,7 @@
                     <div class="phone">
                         <div class="screen">
                             <div class="placeholder">Une cave électrique en 3D</div>
-                            <img src="images/c2-cave-3d.jpg" alt="Une cave électrique en 3D, porte ouverte, ses clayettes pleines de bouteilles" onerror="this.remove()" loading="lazy">
+                            <img src="images/c2-cave-3d.jpg" width="506" height="1100" alt="Une cave électrique en 3D, porte ouverte, ses clayettes pleines de bouteilles" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <figcaption><strong>Cave électrique</strong><span>Des clayettes, les bouteilles tête-bêche sur deux profondeurs. Une étagère peut n'avoir que le devant, comme celle du bas, au-dessus du moteur.</span></figcaption>
@@ -433,7 +467,7 @@
                     <div class="phone">
                         <div class="screen">
                             <div class="placeholder">Une étagère à bouteilles en 3D</div>
-                            <img src="images/c2c-rack.jpg" alt="Une étagère à bouteilles en bois en 3D, ses bouteilles couchées côte à côte" onerror="this.remove()" loading="lazy">
+                            <img src="images/c2c-rack.jpg" width="506" height="1100" alt="Une étagère à bouteilles en bois en 3D, ses bouteilles couchées côte à côte" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <figcaption><strong>Étagère</strong><span>Une étagère ouverte : une rangée de bouteilles par étage, jusqu'à 20 de large, goulot devant ou au fond.</span></figcaption>
@@ -447,16 +481,16 @@
         <div class="wrap">
             <div class="sommelier-head reveal">
                 <p class="eyebrow">Sommelier<span class="tag">Grand Cru</span></p>
-                <h2>Un sommelier qui connaît votre cave</h2>
-                <p class="lead">Dites-lui l'occasion, il choisit dans vos bouteilles.</p>
+                <h2>Un sommelier IA qui connaît votre cave</h2>
+                <p class="lead">Dites-lui l'occasion ou le plat, il trouve l'accord mets et vins dans vos bouteilles.</p>
             </div>
             <div class="occasions reveal">
-                <div class="occasion"><img src="images/event_apero.png" alt="" loading="lazy">Apéro entre amis</div>
-                <div class="occasion"><img src="images/event_maison.png" alt="" loading="lazy">Repas à la maison</div>
-                <div class="occasion"><img src="images/event_diner.png" alt="" loading="lazy">Recevoir à dîner</div>
-                <div class="occasion"><img src="images/event_fete.png" alt="" loading="lazy">Quelque chose à fêter</div>
-                <div class="occasion"><img src="images/event_cadeau.png" alt="" loading="lazy">Bouteille à offrir</div>
-                <div class="occasion"><img src="images/event_plein_air.png" alt="" loading="lazy">En plein air</div>
+                <div class="occasion"><img src="images/event_apero.webp" alt="" width="360" height="360" loading="lazy">Apéro entre amis</div>
+                <div class="occasion"><img src="images/event_maison.webp" alt="" width="360" height="360" loading="lazy">Repas à la maison</div>
+                <div class="occasion"><img src="images/event_diner.webp" alt="" width="360" height="360" loading="lazy">Recevoir à dîner</div>
+                <div class="occasion"><img src="images/event_fete.webp" alt="" width="360" height="360" loading="lazy">Quelque chose à fêter</div>
+                <div class="occasion"><img src="images/event_cadeau.webp" alt="" width="360" height="360" loading="lazy">Bouteille à offrir</div>
+                <div class="occasion"><img src="images/event_plein_air.webp" alt="" width="360" height="360" loading="lazy">En plein air</div>
             </div>
             <div class="feature reverse">
                 <div class="reveal">
@@ -473,13 +507,13 @@
                     <div class="phone">
                         <div class="screen">
                             <div class="placeholder">Sommelier : le choix de l'occasion</div>
-                            <img src="images/c5-sommelier-occasion.jpg" alt="Le Sommelier : choix de l'occasion" onerror="this.remove()" loading="lazy">
+                            <img src="images/c5-sommelier-occasion.jpg" width="506" height="1100" alt="Le Sommelier : choix de l'occasion" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <div class="phone">
                         <div class="screen">
                             <div class="placeholder">Sommelier : la recommandation argumentée</div>
-                            <img src="images/c6-sommelier-choix.jpg" alt="La recommandation du Sommelier, avec ses raisons et deux autres choix" onerror="this.remove()" loading="lazy">
+                            <img src="images/c6-sommelier-choix.jpg" width="506" height="1100" alt="La recommandation du Sommelier, avec ses raisons et deux autres choix" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -492,7 +526,7 @@
         <div class="wrap feature">
             <div class="reveal">
                 <p class="eyebrow">Scan d'étiquette</p>
-                <h2>Une photo, une fiche complète</h2>
+                <h2>Scannez l'étiquette, la fiche se remplit</h2>
                 <p>Photographiez l'étiquette. Le sommelier lit le domaine, la cuvée, l'appellation et le millésime, puis remplit la fiche : cépages, profil du vin, notes de dégustation, température de service, carafage, accords et période de garde.</p>
                 <p>Si une contre-étiquette existe, scannez-la également pour améliorer la recherche.</p>
                 <p>Ça marche aussi pour le petit vigneron absent de toutes les bases de données.</p>
@@ -502,7 +536,7 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Scan : la fiche remplie</div>
-                        <img src="images/c7-scan.jpg" alt="La fiche d'un vin remplie après le scan de son étiquette" onerror="this.remove()" loading="lazy">
+                        <img src="images/c7-scan.jpg" width="506" height="1100" alt="La fiche d'un vin remplie après le scan de son étiquette" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -514,7 +548,7 @@
         <div class="wrap feature reverse">
             <div class="reveal">
                 <p class="eyebrow">Garde</p>
-                <h2>Le bon moment pour chaque bouteille</h2>
+                <h2>Garde du vin : le bon moment pour chaque bouteille</h2>
                 <p>Chaque vin a sa courbe de vieillissement, de la jeunesse à l'apogée, puis au déclin. WineWhisper la trace millésime par millésime, et vous pouvez l'ajuster selon votre propre palais.</p>
                 <p>L'accueil vous montre les vins prêts à être dégustés, et vous signale ceux qu'il ne faut plus trop attendre.</p>
             </div>
@@ -522,13 +556,13 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Fiche vin : la courbe de vieillissement</div>
-                        <img src="images/c8-courbe.jpg" alt="La courbe de vieillissement d'un vin, réglable millésime par millésime" onerror="this.remove()" loading="lazy">
+                        <img src="images/c8-courbe.jpg" width="506" height="1100" alt="La courbe de vieillissement d'un vin, réglable millésime par millésime" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Accueil : boire au bon moment</div>
-                        <img src="images/c1b-accueil-boire-au-bon-moment.jpg" alt="L'accueil : les vins à surveiller et ceux à boire cette année" onerror="this.remove()" loading="lazy">
+                        <img src="images/c1b-accueil-boire-au-bon-moment.jpg" width="506" height="1100" alt="L'accueil : les vins à surveiller et ceux à boire cette année" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -540,7 +574,7 @@
         <div class="wrap feature">
             <div class="reveal">
                 <p class="eyebrow">Statistiques</p>
-                <h2>Votre cave en un coup d'œil</h2>
+                <h2>L'inventaire de votre cave en un coup d'œil</h2>
                 <ul class="points">
                     <li><strong>Analyse</strong><span>La répartition par couleur, par région et par phase de garde.</span></li>
                     <li><strong>Finances<span class="tag">Grand Cru</span></strong><span>Le montant investi et vos achats mois par mois, d'après vos prix d'achat, et la valeur des bouteilles à ouvrir avant qu'elles perdent leur intérêt.</span></li>
@@ -551,13 +585,13 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Statistiques de la cave</div>
-                        <img src="images/c9-statistiques.jpg" alt="Les statistiques de la cave" onerror="this.remove()" loading="lazy">
+                        <img src="images/c9-statistiques.jpg" width="506" height="1100" alt="Les statistiques de la cave" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">Activité de la cave</div>
-                        <img src="images/c10b-evolution.jpg" alt="L'évolution de la cave, mois par mois" onerror="this.remove()" loading="lazy">
+                        <img src="images/c10b-evolution.jpg" width="506" height="1100" alt="L'évolution de la cave, mois par mois" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -640,7 +674,7 @@
                 <figure>
                     <div class="phone small">
                         <div class="screen">
-                            <img src="images/c11-configuration.jpg" alt="La configuration d'une cave, avec son aperçu en 3D" onerror="this.remove()" loading="lazy">
+                            <img src="images/c11-configuration.jpg" width="506" height="1100" alt="La configuration d'une cave, avec son aperçu en 3D" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <figcaption>Créer sa cave</figcaption>
@@ -648,7 +682,7 @@
                 <figure>
                     <div class="phone small">
                         <div class="screen">
-                            <img src="images/c5b-sommelier-criteres.jpg" alt="Les réglages du Sommelier pour un dîner : niveau, couleur et plat" onerror="this.remove()" loading="lazy">
+                            <img src="images/c5b-sommelier-criteres.jpg" width="506" height="1100" alt="Les réglages du Sommelier pour un dîner : niveau, couleur et plat" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <figcaption>Préciser l'occasion</figcaption>
@@ -656,7 +690,7 @@
                 <figure>
                     <div class="phone small">
                         <div class="screen">
-                            <img src="images/c13-archive.jpg" alt="L'écran Données, avec la création d'une archive" onerror="this.remove()" loading="lazy">
+                            <img src="images/c13-archive.jpg" width="506" height="1100" alt="L'écran Données, avec la création d'une archive" onerror="this.remove()" loading="lazy">
                         </div>
                     </div>
                     <figcaption>Sauvegarder</figcaption>
@@ -698,7 +732,7 @@
                 <div class="phone">
                     <div class="screen">
                         <div class="placeholder">L'offre Grand Cru dans l'app</div>
-                        <img src="images/c14-grand-cru.jpg" alt="L'écran Grand Cru : les quatre avantages et les formules annuelle, mensuelle et à vie" onerror="this.remove()" loading="lazy">
+                        <img src="images/c14-grand-cru.jpg" width="506" height="1100" alt="L'écran Grand Cru : les quatre avantages et les formules annuelle, mensuelle et à vie" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
             </div>
