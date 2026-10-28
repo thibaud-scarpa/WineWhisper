@@ -28,7 +28,7 @@
     "description": "Application de gestion de cave à vin sur iPhone : cave en 3D, scan d'étiquette, garde des vins et sommelier IA pour les accords mets et vins.",
     "url": "https://winewhisper.app/",
     "image": "https://winewhisper.app/images/partage.jpg",
-    "operatingSystem": "iOS 27",
+    "operatingSystem": "iOS 26.1 ou ultérieur",
     "applicationCategory": "LifestyleApplication",
     "inLanguage": "fr",
     "offers": {
@@ -41,6 +41,19 @@
         "@type": "Person",
         "name": "Thibaud Scarpa"
     }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "WineWhisper en 45 secondes : de l'étiquette au verre",
+    "description": "Une photo d'étiquette remplit la fiche du vin, la bouteille rejoint la cave en 3D, et le Sommelier choisit la bouteille idéale pour ce soir.",
+    "thumbnailUrl": "https://winewhisper.app/video/winewhisper-45s.jpg",
+    "contentUrl": "https://winewhisper.app/video/winewhisper-45s.mp4",
+    "uploadDate": "2026-10-28",
+    "duration": "PT45S",
+    "inLanguage": "fr"
 }
 </script>
 <!-- Icônes d'onglet et de favoris : en changer le nom si l'icône change, les navigateurs les gardent en cache. -->
@@ -201,6 +214,29 @@
     .phones .phone { flex: 0 1 300px; min-width: 0; margin: 0; }
     .phones .phone:nth-child(2) { margin-top: 48px; }
     .hero .wrap > *, .feature > * { min-width: 0; }
+
+    /* Film de présentation : bande lie-de-vin, de la couleur du fond de la vidéo, en clair comme en sombre. */
+    .watch { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; }
+    .watch svg { width: 22px; height: 22px; fill: currentColor; }
+    .film {
+        padding: 88px 0 96px;
+        background: radial-gradient(90% 120% at 50% 0%, #6b1424, #2a070e 72%);
+        color: #fbeef0;
+    }
+    .film .eyebrow { color: #f2a7b4; }
+    .film h2 { color: #fff; }
+    .film .lead { color: rgba(255, 255, 255, 0.75); margin-bottom: 0; }
+    .film-frame {
+        max-width: 960px;
+        margin: 44px auto 0;
+        aspect-ratio: 16 / 9;
+        border-radius: 22px;
+        overflow: hidden;
+        background: #1a0508;
+        box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    .film-frame video { display: block; width: 100%; height: 100%; }
+    .film .note { text-align: center; font-size: 0.85em; color: rgba(255, 255, 255, 0.55); margin: 18px 0 0; }
 
     /* Sections de fonctionnalités */
     section { padding: 96px 0; }
@@ -414,7 +450,8 @@
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.6-1-2.6-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg>
                         Bientôt sur l'App Store
                     </span>
-                    <small>iPhone · iOS 27 · Gratuit, sans compte, sans publicité · <a href="#grand-cru">Grand Cru</a> en option</small>
+                    <a class="watch" href="#film"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 6.5 6 3.5-6 3.5z"/></svg>Voir le film (45 s)</a>
+                    <small>iPhone · iOS 26.1 et plus · Gratuit, sans compte, sans publicité · <a href="#grand-cru">Grand Cru</a> en option</small>
                 </div>
             </div>
             <div class="reveal">
@@ -427,6 +464,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Film de présentation (Promo/WineWhisper_Pub_45s_B.mp4, réencodé pour le web) -->
+    <section id="film" class="film">
+        <div class="wrap">
+            <div class="center reveal">
+                <p class="eyebrow">En 45 secondes</p>
+                <h2>De l'étiquette au verre</h2>
+                <p class="lead">Une photo, une fiche complète, votre cave en 3D et le Sommelier qui choisit pour vous.</p>
+            </div>
+            <div class="film-frame reveal">
+                <video controls playsinline preload="none" width="1920" height="1080"
+                       poster="video/winewhisper-45s.jpg"
+                       aria-label="Film de présentation de WineWhisper, 45 secondes">
+                    <source src="video/winewhisper-45s.mp4" type="video/mp4">
+                    <track kind="subtitles" src="video/winewhisper-45s.fr.vtt" srclang="fr" label="Français">
+                    <a href="video/winewhisper-45s.mp4">Voir le film de présentation (MP4, 5 Mo)</a>
+                </video>
+            </div>
+            <p class="note">Avec le son · Sous-titres disponibles dans le lecteur</p>
+        </div>
+    </section>
 
     <!-- Cave 3D -->
     <section id="cave">
@@ -551,14 +609,14 @@
             <div class="reveal">
                 <p class="eyebrow">Garde</p>
                 <h2>Garde du vin : le bon moment pour chaque bouteille</h2>
-                <p>Chaque vin a sa courbe de vieillissement, de la jeunesse à l'apogée, puis au déclin. WineWhisper la trace millésime par millésime, et vous pouvez l'ajuster selon votre propre palais.</p>
+                <p>Chaque vin suit sa course du soleil : il se lève avec le millésime, monte jusqu'à son apogée, puis décline. WineWhisper la trace millésime par millésime, et vous pouvez l'ajuster selon votre propre palais.</p>
                 <p>L'accueil vous montre les vins prêts à être dégustés, et vous signale ceux qu'il ne faut plus trop attendre.</p>
             </div>
             <div class="phones reveal">
                 <div class="phone">
                     <div class="screen">
-                        <div class="placeholder">Fiche vin : la courbe de vieillissement</div>
-                        <img src="images/c8-courbe.jpg" width="506" height="1100" alt="La courbe de vieillissement d'un vin, réglable millésime par millésime" onerror="this.remove()" loading="lazy">
+                        <div class="placeholder">Fiche vin : la course du soleil</div>
+                        <img src="images/c8-courbe.jpg" width="506" height="1100" alt="La course du soleil d'un vin : millésime, apogée et fin de garde, réglable millésime par millésime" onerror="this.remove()" loading="lazy">
                     </div>
                 </div>
                 <div class="phone">
